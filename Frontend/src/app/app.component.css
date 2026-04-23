@@ -1,0 +1,32 @@
+.fondo-verde {
+    background-color: green;
+    font-size: 20px;
+}
+
+/* .fondo-rojo {
+    background-color: red;
+    font-size: 40px;
+} */
+
+.button {
+    font-size: 15px;
+    background-color: #E9ED2D;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+}
+
+.button-containers {
+    padding: 5px;
+    background-color: rgb(171, 29, 135);
+}
+
+.btn{
+    font-size: 15px;
+    background-color: #ba2ded;
+    border-radius: 10px;
+}
+
+.mensaje {
+    background-color: blue;
+}

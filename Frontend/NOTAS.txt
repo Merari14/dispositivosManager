@@ -1,0 +1,13 @@
+comandos y conceptos basicos de angular
+
+## comandos
+ng new nombreProyecto -> crear nombreProyecto
+ng serve -> para ejecutar la applicacion
+
+
+## conceptos
+
+componente -> Es una clase que maneja la lógica y está vinculada a un HTML (vista) y CSS (estilos) para mostrar información en la UI.
+package-lock -> en un json que contiene las dependencias VERSIONADAS del proyecto ( librerias, plugins) 
+index -> es la raiz del proyecto, aqui se define la estrcutura del documento
+app -> es el componente raiz, el que se agrega en el archivo index.html 
