@@ -1,11 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';  /*es como si fuese el using en el framework en C#*/
 import { RouterOutlet } from '@angular/router';
 import { ChildComponent } from './child/child.component';
+import { RequestsService } from '../servicios/requests/requests.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, ChildComponent],
+  providers: [RequestsService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -17,7 +19,7 @@ export class AppComponent implements OnInit, OnDestroy {
    dispositivos: string[];
   //items: any[];
 
-  constructor() {
+  constructor(private requests: RequestsService) {
     this.nombreBotonSaludo = "Saludar";
     this.nombreBotonDespedida = "BYE";
     this.mostrarMensaje = false;
@@ -54,8 +56,23 @@ export class AppComponent implements OnInit, OnDestroy {
     alert("bye humanos");
   }
 
+  getDispositivos() {
+    this.requests.getDispositivos().subscribe({
+      next: (data: any[]) => {
+        // caso de exito de la peticion
+        console.log("datos obtenidos");
+        console.log(data);
+      },
+      error: () => {
+        // se ejecuta cuando ocurre un error
+        console.error("la peticion no se pudo ejecutar");
+      }
+    })
+  }
+
   ngOnInit(): void {
    console.log("inicializando componente app-root");
+   this.getDispositivos();
   }
 
   ngOnDestroy(): void {
